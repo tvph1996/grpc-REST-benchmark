@@ -27,18 +27,19 @@ The REST API is built with **FastAPI** to provide a modern, asynchronous compari
 ## Benchmark Results
 Testing was conducted across various payload sizes and call volumes to compare latency and throughput.
 
+<img width="1062" height="741" alt="image" src="https://github.com/user-attachments/assets/569f2989-6eda-4d90-84fb-2ce8149597ff" />
+<img width="1228" height="576" alt="image" src="https://github.com/user-attachments/assets/c356477f-085f-4d4e-a12b-ef28aaa4f0b2" />
+<img width="1228" height="570" alt="image" src="https://github.com/user-attachments/assets/624e65e1-2482-48a0-9597-4eb81d726b1e" />
+
+
+
 ### Key Insights
 - **Performance**: On average, gRPC performed approximately **2x faster** than REST for small to medium payloads.
 - **Resource Utilization**: gRPC utilized more CPU resources (~75%) compared to REST (~60%), reflecting its efficiency in processing high-frequency calls.
 - **Payload Sensitivity**: While gRPC excels at high call volumes, its performance advantage diminishes with very large messages (over 256 KB). For messages exceeding 4 MB, custom gRPC configurations are required to bypass default limits.
 - **Optimization Strategy**: For large data transfers, the best performance was achieved by balancing message size and call frequency. For example, transferring 4 MB via 512 calls of 8 KB messages was significantly faster than making hundreds of thousands of calls with 16-byte payloads.
 
-| Scenario (Total Data) | gRPC (Total Time) | REST (Total Time) |
-| :--- | :--- | :--- |
-| 16,384 Calls (256 KB) | ~8.87 seconds | ~20.07 seconds |
-| 65,536 Calls (1 MB) | ~35.39 seconds | ~80.30 seconds |
-| 262,144 Calls (4 MB) | ~141.86 seconds | ~319.30 seconds |
-| 512 Calls (4 MB Total) | **~0.31 seconds** | ~0.64 seconds |
+
 
 
 ## Technology Stack
