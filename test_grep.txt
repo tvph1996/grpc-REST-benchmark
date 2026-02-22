@@ -1,5 +1,0 @@
-./myitems_pb2_grpc.py:23:        + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
-./myitems_pb2_grpc.py:24:        + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
-./server_grpc/myitems_pb2_grpc.py:23:        + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
-./server_grpc/myitems_pb2_grpc.py:24:        + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
-./server_grpc/server_grpc.py:109:            replyContent = f"Server acknowledges your message: '{clientMessage.content}'" 
